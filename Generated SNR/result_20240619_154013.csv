@@ -1,0 +1,6 @@
+Audio File,User Choice,Correct Answer,Is Correct
+SingleTalker_SNR_-4_dB_wooed.wav,would,SingleTalker_SNR_-4_dB_wooed,False
+SingleTalker_SNR_0_dB_pet.wav,pat,SingleTalker_SNR_0_dB_pet,False
+SingleTalker_SNR_0_dB_field.wav,filled,SingleTalker_SNR_0_dB_field,False
+SingleTalker_SNR_-4_dB_least.wav,least,SingleTalker_SNR_-4_dB_least,True
+SingleTalker_SNR_0_dB_Luke.wav,Luke,SingleTalker_SNR_0_dB_Luke,True

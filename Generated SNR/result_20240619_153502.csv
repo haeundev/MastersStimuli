@@ -1,0 +1,6 @@
+Audio File,User Choice,Correct Answer,Is Correct
+SingleTalker_SNR_-4_dB_cheap.wav,cheap,SingleTalker_SNR_-4_dB_cheap,False
+SingleTalker_SNR_-4_dB_pull.wav,pool,SingleTalker_SNR_-4_dB_pull,False
+SingleTalker_SNR_0_dB_bot.wav,bot,SingleTalker_SNR_0_dB_bot,False
+SingleTalker_SNR_0_dB_chip.wav,cheap,SingleTalker_SNR_0_dB_chip,False
+SingleTalker_SNR_-4_dB_but.wav,bot,SingleTalker_SNR_-4_dB_but,False

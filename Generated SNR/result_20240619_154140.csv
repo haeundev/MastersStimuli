@@ -1,0 +1,7 @@
+Audio File,User Choice,Is Correct
+SingleTalker_SNR_-4_dB_sob.wav,sob,True
+SingleTalker_SNR_-4_dB_rich.wav,rich,True
+SingleTalker_SNR_-4_dB_itch.wav,each,False
+SingleTalker_SNR_-4_dB_bot.wav,but,False
+SingleTalker_SNR_0_dB_sob.wav,sob,True
+SingleTalker_SNR_-4_dB_list.wav,least,False

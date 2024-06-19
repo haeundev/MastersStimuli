@@ -1,0 +1,14 @@
+Audio File,User Choice,Correct Answer,Is Correct
+SingleTalker_SNR_-4_dB_reach.wav,rich,SingleTalker_SNR_-4_dB_reach,False
+SingleTalker_SNR_0_dB_shooed.wav,shooed,SingleTalker_SNR_0_dB_shooed,False
+SingleTalker_SNR_-4_dB_pull.wav,pull,SingleTalker_SNR_-4_dB_pull,False
+SingleTalker_SNR_-4_dB_pop.wav,pup,SingleTalker_SNR_-4_dB_pop,False
+SingleTalker_SNR_-4_dB_pat.wav,pet,SingleTalker_SNR_-4_dB_pat,False
+SingleTalker_SNR_0_dB_man.wav,man,SingleTalker_SNR_0_dB_man,False
+SingleTalker_SNR_0_dB_grin.wav,green,SingleTalker_SNR_0_dB_grin,False
+SingleTalker_SNR_-4_dB_rich.wav,rich,SingleTalker_SNR_-4_dB_rich,False
+SingleTalker_SNR_0_dB_itch.wav,each,SingleTalker_SNR_0_dB_itch,False
+SingleTalker_SNR_0_dB_bat.wav,bat,SingleTalker_SNR_0_dB_bat,False
+SingleTalker_SNR_0_dB_sat.wav,set,SingleTalker_SNR_0_dB_sat,False
+SingleTalker_SNR_-4_dB_wooed.wav,wooed,SingleTalker_SNR_-4_dB_wooed,False
+SingleTalker_SNR_0_dB_tan.wav,ten,SingleTalker_SNR_0_dB_tan,False
