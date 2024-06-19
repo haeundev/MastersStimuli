@@ -4,6 +4,7 @@ import pygame
 import csv
 from datetime import datetime
 
+
 def play_audio_files(directory):
     # Initialize pygame
     pygame.init()
@@ -13,7 +14,8 @@ def play_audio_files(directory):
     screen = pygame.display.set_mode((800, 600))
     pygame.display.set_caption("Audio Player")
     font = pygame.font.Font(None, 74)
-    small_font = pygame.font.Font(None, 36)
+    middle_font = pygame.font.Font(None, 45)
+    small_font = pygame.font.Font(None, 35)
     clock = pygame.time.Clock()
 
     # Load listen icon
@@ -35,7 +37,7 @@ def play_audio_files(directory):
     # Create CSV file to log results
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     csv_filename = f"result_{timestamp}.csv"
-    csv_filepath = os.path.join(directory, csv_filename)
+    csv_filepath = os.path.join(csv_filename)
 
     with open(csv_filepath, mode='w', newline='') as file:
         writer = csv.writer(file)
@@ -76,7 +78,6 @@ def play_audio_files(directory):
             is_correct = user_choice in audio_file  # Check if the user's choice is correct
 
             # Log the result to CSV
-            # save the result to the csv file instantly
             with open(csv_filepath, mode='a', newline='') as file:
                 writer = csv.writer(file)
                 writer.writerow([audio_file, user_choice, is_correct])
@@ -98,10 +99,15 @@ def play_audio_files(directory):
             pygame.draw.rect(screen, button_color, button1_rect)
             pygame.draw.rect(screen, button_color, button2_rect)
 
-            button1_text = small_font.render(word_pair[0], True, text_color)
-            button2_text = small_font.render(word_pair[1], True, text_color)
-            screen.blit(button1_text, button1_rect.move(20, 30))
-            screen.blit(button2_text, button2_rect.move(20, 30))
+            button1_text = middle_font.render(word_pair[0], True, text_color)
+            button2_text = middle_font.render(word_pair[1], True, text_color)
+            #screen.blit(button1_text, button1_rect.move(20, 30))
+            #screen.blit(button2_text, button2_rect.move(20, 30))
+
+            text1_rect = button1_text.get_rect(center=button1_rect.center)
+            screen.blit(button1_text, text1_rect)
+            text2_rect = button2_text.get_rect(center=button2_rect.center)
+            screen.blit(button2_text, text2_rect)
 
             pygame.display.flip()
 
@@ -165,4 +171,84 @@ def play_audio_files(directory):
 
     pygame.quit()
 
-play_audio_files('Generated SNR')
+def select_mode():
+    selected_mode = mode_var.get()
+    if selected_mode == 'Environment':
+        play_audio_files('Environment')
+    elif selected_mode == 'SingleTalker':
+        play_audio_files('SingleTalker')
+    elif selected_mode == 'PinkNoise':
+        play_audio_files('PinkNoise')
+
+def main():
+    pygame.init()
+    screen = pygame.display.set_mode((800, 600))
+    pygame.display.set_caption("Select Mode")
+    font = pygame.font.Font(None, 74)
+    small_font = pygame.font.Font(None, 35)
+    clock = pygame.time.Clock()
+
+    bg_color = (26, 92, 74)
+    text_color = (255, 255, 255)
+    mode_select_button_color = (50, 150, 200)
+    highlight_color = (244, 174, 66)
+
+    global mode_var
+    mode_var = 'Environment'
+
+    running = True
+    while running:
+        screen.fill(bg_color)
+
+        # Draw the buttons for mode selection
+        env_button_rect = pygame.Rect(150, 150, 200, 100)
+        single_button_rect = pygame.Rect(450, 150, 200, 100)
+        pink_button_rect = pygame.Rect(300, 300, 200, 100)
+
+        pygame.draw.rect(screen, highlight_color, env_button_rect)
+        pygame.draw.rect(screen, highlight_color, single_button_rect)
+        pygame.draw.rect(screen, highlight_color, pink_button_rect)
+
+        env_text = small_font.render('Environment', True, bg_color)
+        single_text = small_font.render('Single Talker', True, bg_color)
+        pink_text = small_font.render('Pink Noise', True, bg_color)
+
+        env_text_rect = env_text.get_rect(center=env_button_rect.center)
+        screen.blit(env_text, env_text_rect)
+
+        single_text_rect = single_text.get_rect(center=single_button_rect.center)
+        screen.blit(single_text, single_text_rect)
+
+        pink_text_rect = pink_text.get_rect(center=pink_button_rect.center)
+        screen.blit(pink_text, pink_text_rect)
+
+        pygame.display.flip()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if env_button_rect.collidepoint(event.pos):
+                    mode_var = 'Environment'
+                    running = False
+                elif single_button_rect.collidepoint(event.pos):
+                    mode_var = 'SingleTalker'
+                    running = False
+                elif pink_button_rect.collidepoint(event.pos):
+                    mode_var = 'PinkNoise'
+                    running = False
+
+        clock.tick(30)
+
+    pygame.quit()
+
+    if mode_var == 'Environment':
+        play_audio_files('Environment')
+    elif mode_var == 'SingleTalker':
+        play_audio_files('SingleTalker')
+    elif mode_var == 'PinkNoise':
+        play_audio_files('PinkNoise')
+
+
+if __name__ == "__main__":
+    main()
