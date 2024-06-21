@@ -1,0 +1,11 @@
+Audio File,User Choice,Is Correct
+PinkNoise_SNR_-2_dB_filled.wav,filled,True
+PinkNoise_SNR_-2_dB_ten.wav,ten,True
+PinkNoise_SNR_-5_dB_ten.wav,ten,True
+PinkNoise_SNR_-2_dB_pool.wav,pool,True
+PinkNoise_SNR_-5_dB_could.wav,cooed,False
+PinkNoise_SNR_-5_dB_field.wav,filled,False
+PinkNoise_SNR_-5_dB_least.wav,least,True
+PinkNoise_SNR_-2_dB_men.wav,men,True
+PinkNoise_SNR_-5_dB_scene.wav,scene,True
+PinkNoise_SNR_-2_dB_chip.wav,chip,True

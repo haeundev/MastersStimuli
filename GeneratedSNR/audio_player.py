@@ -87,7 +87,8 @@ def play_audio_files(directory):
         pygame.quit()
 
     def get_user_choice(audio_file):
-        word_pair = get_word_pair(audio_file)
+        word_pair = list(get_word_pair(audio_file))
+        random.shuffle(word_pair)  # Add this line to shuffle the word pair
         choice = None
 
         while choice is None:
@@ -101,8 +102,8 @@ def play_audio_files(directory):
 
             button1_text = middle_font.render(word_pair[0], True, text_color)
             button2_text = middle_font.render(word_pair[1], True, text_color)
-            #screen.blit(button1_text, button1_rect.move(20, 30))
-            #screen.blit(button2_text, button2_rect.move(20, 30))
+            # screen.blit(button1_text, button1_rect.move(20, 30))
+            # screen.blit(button2_text, button2_rect.move(20, 30))
 
             text1_rect = button1_text.get_rect(center=button1_rect.center)
             screen.blit(button1_text, text1_rect)
@@ -173,8 +174,8 @@ def play_audio_files(directory):
 
 def select_mode():
     selected_mode = mode_var.get()
-    if selected_mode == 'Environment':
-        play_audio_files('Environment')
+    if selected_mode == 'Clear':
+        play_audio_files('Clear')
     elif selected_mode == 'SingleTalker':
         play_audio_files('SingleTalker')
     elif selected_mode == 'PinkNoise':
@@ -194,7 +195,7 @@ def main():
     highlight_color = (244, 174, 66)
 
     global mode_var
-    mode_var = 'Environment'
+    mode_var = 'Clear'
 
     running = True
     while running:
@@ -209,7 +210,7 @@ def main():
         pygame.draw.rect(screen, highlight_color, single_button_rect)
         pygame.draw.rect(screen, highlight_color, pink_button_rect)
 
-        env_text = small_font.render('Environment', True, bg_color)
+        env_text = small_font.render('Clear', True, bg_color)
         single_text = small_font.render('Single Talker', True, bg_color)
         pink_text = small_font.render('Pink Noise', True, bg_color)
 
@@ -229,7 +230,7 @@ def main():
                 running = False
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if env_button_rect.collidepoint(event.pos):
-                    mode_var = 'Environment'
+                    mode_var = 'Clear'
                     running = False
                 elif single_button_rect.collidepoint(event.pos):
                     mode_var = 'SingleTalker'
@@ -242,8 +243,8 @@ def main():
 
     pygame.quit()
 
-    if mode_var == 'Environment':
-        play_audio_files('Environment')
+    if mode_var == 'Clear':
+        play_audio_files('Clear')
     elif mode_var == 'SingleTalker':
         play_audio_files('SingleTalker')
     elif mode_var == 'PinkNoise':

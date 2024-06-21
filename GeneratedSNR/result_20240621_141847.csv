@@ -1,0 +1,16 @@
+Audio File,User Choice,Is Correct
+PinkNoise_SNR_-2_dB_rich.wav,rich,True
+PinkNoise_SNR_-2_dB_field.wav,field,True
+PinkNoise_SNR_-5_dB_look.wav,look,True
+PinkNoise_SNR_-2_dB_sub.wav,sub,True
+PinkNoise_SNR_-2_dB_pop.wav,pop,True
+PinkNoise_SNR_-2_dB_hut.wav,hut,True
+PinkNoise_SNR_-5_dB_least.wav,least,True
+PinkNoise_SNR_-2_dB_hot.wav,hot,True
+PinkNoise_SNR_-2_dB_pet.wav,pet,True
+PinkNoise_SNR_-5_dB_bull.wav,bull,True
+PinkNoise_SNR_-2_dB_reach.wav,reach,True
+PinkNoise_SNR_-5_dB_full.wav,full,True
+PinkNoise_SNR_-2_dB_can.wav,can,True
+PinkNoise_SNR_-5_dB_green.wav,green,True
+PinkNoise_SNR_-2_dB_Boole.wav,Boole,True

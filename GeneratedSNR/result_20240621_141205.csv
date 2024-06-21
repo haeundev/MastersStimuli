@@ -1,0 +1,8 @@
+Audio File,User Choice,Is Correct
+PinkNoise_SNR_-5_dB_men.wav,men,True
+PinkNoise_SNR_-2_dB_mat.wav,met,False
+PinkNoise_SNR_-5_dB_would.wav,would,True
+PinkNoise_SNR_-5_dB_pat.wav,pat,True
+PinkNoise_SNR_-5_dB_shooed.wav,shooed,True
+PinkNoise_SNR_-5_dB_cheap.wav,cheap,True
+PinkNoise_SNR_-5_dB_field.wav,field,True

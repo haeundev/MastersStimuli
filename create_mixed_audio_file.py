@@ -96,9 +96,13 @@ def process_waveforms(clean_file, noise_file, noise_mode, snr_list):
 
 if __name__ == '__main__':
     CLEAN_DIR = 'Words/Target/F3'
+    # NOISE_FILE = 'Noise/Concat_p4_Nz.wav'
+    # NOISE_MODE = 'PinkNoise'
+
     NOISE_FILE = 'Noise/Concat_p4_Nz.wav'
     NOISE_MODE = 'PinkNoise'
-    SNR_LIST = [-4, 0]
+
+    SNR_LIST = [-2, -5]
 
     for file in os.listdir(CLEAN_DIR):
         if file.endswith(".wav"):

@@ -53,7 +53,7 @@ def plot_waveforms(time_axis, clean_amp, adjusted_noise_amp, mixed_amp, output_p
     print(f"Saved waveform plot as {output_path}")
 
 
-def process_audio(clean_file, noise_file, snr_list, noise_mode='PinkNoise'):
+def process_audio(clean_file, noise_file, snr_list, noise_mode='SingleTalker'):
     clean_wav = wave.open(clean_file, "r")
     noise_wav = wave.open(noise_file, "r")
 
@@ -101,13 +101,14 @@ if __name__ == '__main__':
     # snr_list = [-4, 0, 4]
     # process_audio(clean_file, noise_file, snr_list)
 
-    snr_list = [-4, 0, 4]
+    snr_list = [-2, -5]
     dir_clean = 'Words/Target/F3'  # get all wav files in the following directory
     # dir_noise = 'Noise/Concat_p4_Nz.wav'
-    noise_file = 'Noise/Concat_p4_Nz.wav'
+    dir_noise = 'Sentences/F3'
+    # noise_file = 'Noise/Concat_p4_Nz.wav'
     for file in os.listdir(dir_clean):
         if file.endswith(".wav"):
             clean_file = os.path.join(dir_clean, file)
             # get random noise file
-            # noise_file = os.path.join(dir_noise, np.random.choice(os.listdir(dir_noise)))
+            noise_file = os.path.join(dir_noise, np.random.choice(os.listdir(dir_noise)))
             process_audio(clean_file, noise_file, snr_list)

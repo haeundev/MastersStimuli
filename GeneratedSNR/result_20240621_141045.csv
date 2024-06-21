@@ -1,0 +1,3 @@
+Audio File,User Choice,Is Correct
+SingleTalker_SNR_-4_dB_pat.wav,pet,False
+SingleTalker_SNR_0_dB_fund.wav,fund,True
